@@ -1,117 +1,59 @@
-# TV Land Active Record Associations Lab
+# Module One Final Project Guidelines
 
-## Objectives
+Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
 
-- Create and modify tables using Active Record migrations.
-- Build associations between models using Active Record macros.
+For your final project, we'll be building a Command Line database application.
 
-## Overview
+## Project Requirements
 
-In this lab, we'll be working with a TV show domain model. We will have a show,
-network, and character model. They will be associated in the following way:
+### Option One - Data Analytics Project
 
-- An actor has many characters and has many shows through characters.
-- A character belongs to an actor and belongs to a show.
-- A show has many characters and has many actors through characters.
+1. Access a Sqlite3 Database using ActiveRecord.
+2. You should have at minimum three models including one join model. This means you must have a many-to-many relationship.
+3. You should seed your database using data that you collect either from a CSV, a website by scraping, or an API.
+4. Your models should have methods that answer interesting questions about the data. For example, if you've collected info about movie reviews, what is the most popular movie? What movie has the most reviews?
+5. You should provide a CLI to display the return values of your interesting methods.  
+6. Use good OO design patterns. You should have separate classes for your models and CLI interface.
 
-We've given you a few migrations in the `db/migrate` directory to create the
-networks and shows table, but you'll have to add additional tables and modify
-these existing tables as per the guidelines below.
+  **Resource:** [Easy Access APIs](https://github.com/learn-co-curriculum/easy-access-apis)
 
-**Remember to run `rake db:migrate` in the terminal before you run your tests and after you make any new migrations!**
+### Option Two - Command Line CRUD App
+
+1. Access a Sqlite3 Database using ActiveRecord.
+2. You should have a minimum of three models.
+3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
+4. Use good OO design patterns. You should have separate classes for your models and CLI interface.
+
+### Brainstorming and Proposing a Project Idea
+
+Projects need to be approved prior to launching into them, so take some time to brainstorm project options that will fulfill the requirements above.  You must have a minimum of four [user stories](https://en.wikipedia.org/wiki/User_story) to help explain how a user will interact with your app.  A user story should follow the general structure of `"As a <role>, I want <goal/desire> so that <benefit>"`. For example, if we were creating an app to randomly choose nearby restaurants on Yelp, we might write:
+
+* As a user, I want to be able to enter my name to retrieve my records
+* As a user, I want to enter a location and be given a random nearby restaurant suggestion
+* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
+* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
 
 ## Instructions
 
-The tests in this lab are run for each model/migration - actor, character,
-network (solution already provided), and show. Because of this, when run, you
-will see _all the tests_ for the Actor model first, then _all the tests for
-Character, etc... the tricky thing here is that **you will not be able to pass
-all the tests for Actor until the migrations for other models are working**.
+1. Fork and clone this repository.
+2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
+3. Make sure to create a good README.md with a short description, install instructions, a contributor's guide and a link to the license for your code.
+4. Make sure your project checks off each of the above requirements.
+5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
+    * The video should:
+      - Have an overview of your project. (2 minutes max)
+6. Prepare a presentation to follow your video. (3 minutes max)
+    * Your presentation should:
+      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
+      - Discuss 3 things you learned in the process of working on this project.
+      - Address what, if anything, you would change or add to what you have today.
+      - Present any code you would like to highlight.   
+7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
 
-This makes sense, and mirrors normal development of associations - you can't ask
-an Actor instance about what characters it has if there isn't characters table
-or a model configured.
-
-### Migrations
-
-- Write a migration for the actors table. An actor should have a `first_name`
-  and a `last_name`.
-- Write a migration for the characters table. A character should have a `name`,
-  `actor_id`, and a `show_id`––a character will belong to a show (the show
-  migration is already provided) and an actor, and we'll keep track of this
-  relationship with these database table columns.
-- Write a migration that adds the column `catchphrase` to your character model.
-
-### Associations
-
-- Associate the `Actor` model with the `Character` and `Show` model. An actor
-  should have many characters and many shows through characters.
-- Write a method in the `Actor` class, `#full_name`, that returns the first and
-  last name of an actor.
-- Write a method in the `Actor` class, `#list_roles`, that lists all of the
-  characters that actor has alongside the show that the character is in. So, for
-  instance, if we had an actor, Peter Dinklage, a character, Tyrion Lannister,
-  and a show, Game of Thrones, we with
-
-    ```ruby
-    peter = Actor.new(:first_name => "Peter", :last_name => "Dinklage")
-    tyrion = Character.new(:name => "Tyrion Lannister")
-    tyrion.actor = peter
-    thrones = Show.new(:name => "Game of Thrones")
-    tyrion.show = thrones
-    tyrion.save
-    ```
-
-  And then, when we run `peter.list_roles`, we would get an Array containing a
-  string with both the character and the show:
-
-    ```ruby
-    ['Tyrion Lannister - Game of Thrones']
-    ```
-
-- Define a method in the `Character` class, `#say_that_thing_you_say`, using a
-  given character's catchphrase. Using Tyrion as an example again, the returned
-  string should look like the following:
-
-    ```ruby
-    tyrion.catchphrase = 'A Lannister always pays his debts'
-    tyrion.say_that_thing_you_say
-    #=> 'Tyrion Lannister always says: A Lannister always pays his debts'
-    ```
-
-- Define a method in the `Show` class called `#actors_list` that returns an
-  Array of the full names of each actor associated with the a show. Remember,
-  a show should have many actors through characters.
-
-- While we've connected shows, characters and actors together, we haven't
-  connected these models to the existing network model. Update the associations
-  so that a show belongs to a network. In the network model, an association has
-  already been added so that a network has many shows.
-
-  **Note**: Once connected, this allows us to do some interesting things, like
-  chain-building. We could, for instance, create a character, and with that
-  character created, tell Active Record to _chain build_ an associated show.
-  With a _show_ created on the spot, we can immediately tell Active Record to
-  then _chain build an associated network._
-
-  ```ruby
-  rick = Character.new(:name => "Rick Grimes")
-  rick.build_show(:name => "The Walking Dead").build_network(:call_letters => "AMC")
-  ```
-
-  This doesn't _save_ these instances, but will set up the right associations
-  for us and when we save our character, the new show and network are also
-  saved.
-
-### Final Migrations
-
-For the last couple of tests, update the shows table with a new migration. This
-migration should add a `day` column to indicate which day of the week the show
-is on, a `genre` column for the show genre, and `season` to indicate which
-season the show is currently on. All three should be strings.
-
-## Resources
-
-- Rails Guide - [Active Record Associations](http://guides.rubyonrails.org/association_basics.html)
-- API dock - [Active Record Associations](http://apidock.com/rails/ActiveRecord/Associations)
-- Rails Guide - [Active Record Migrations](http://edgeguides.rubyonrails.org/active_record_migrations.html)
+---
+### Common Questions:
+- How do I turn off my SQL logger?
+```ruby
+# in config/environment.rb add this line:
+ActiveRecord::Base.logger = nil
+```
