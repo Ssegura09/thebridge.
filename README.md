@@ -1,4 +1,4 @@
-# project name.
+# the bridge.
 ### Technical Description: 
 A Command Line Interface App with CRUD functioning, incorporating:
 * Object Relational Mapping (with ActiveRecord)
@@ -51,6 +51,7 @@ A Command Line Interface App with CRUD functioning, incorporating:
 
 ### Resource Table Properties
 * Type
+* Details
 
 ### Therapist Table Properties (?)
 * Name
@@ -58,69 +59,86 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Ethnicity
 * Ratings
 * Years Experience
-* Location
+* Offers Virtual Sessions? (Y or N)
 * Email Address
-* Specialty, aka PsychCategory (Foreign Key?)
+* PsychCategory_ID (Foreign Key)
+
+### Saved Resources Table Properties
+* Name
+* Resource_ID (Foreign Key)
+
+<br />
 #
 #
 ## CRUD Abilities, aka User Stories
 "." Designates class methods | "#" Designates instance methods
 
-## Create:
-### User
-* User can create an account and provide my information
+### Create
+* User is greeted with a welcome message upon opening the application
 
-        .create_user
-### PsychCategory
-* User can blah blah blah
+        #greeting
+* User can create an account and provide their information
+
+        .blahblahblah
+### Read
+* User can view all user profile information
 
         .blah
-### Resource
-* User can blah blah blah
+* User can view a randomly-selected affirming message upon selection of PsychCategory
+
+        .blah
+* User can view list of all PyschCategories
+
+        .blah
+* User can view list of selected PsychCategories specific to the User
+
+        .blah
+* User can view list of all Resources
+
+        .blah
+* User can access selected/saved Resources bookmarked/specific to the User
+
+        .blah
+* User can view (PsychCategory) description
+
+        .blah
+* User can view criteria of PsychCategory (return DSM-V API or DSM-V strings)
+
+        .blah
+* User can view (PsychCategory-related) articles
+
+        .blah
+* User can view therapist infomation specific to selected PsychCategory
+
+        .blah
+* User can view (PsychCategory-related) hotline information (from Resources)
 
         .blah
 #
-## Read:
-### User
-* User can blah
+### Update
+* User can update user profile information
+
+        .blahblahblah
+* User can choose a PsychCategory
+
+        .blahblahblah
+* User can choose "Unknown/Not Sure" as PsychCategory
 
         .blah
-### PsychCategory
-* User can blah blah blah
+* User can choose a Resource Type
 
-        .blah
-### Resource
-* User can blah blah blah
-
-        .blah
+        .blahblahblah
 #
-## Update:
-### User
-* User can blah
+### Delete:
+* User can delete a selected/saved Resource specific to User
 
-        .blah
-### PsychCategory
-* User can blah blah blah
+        .blahblahblah
+* User can delete a PsychCategory from selected list specific to User
 
-        .blah
-### Resource
-* User can blah blah blah
+        .blahblahblah
+* User can deactivate their account
 
-        .blah
-#
-## Delete:
-### User
-* User can blah
-
-        .blah
-### PsychCategory
-* User can blah blah blah
-
-        .blah
-### Resource
-* User can blah blah blah
-
-        .blah
+        .blahblahblah
 #
 #
 
@@ -165,31 +183,19 @@ A Command Line Interface App with CRUD functioning, incorporating:
 (Tentative)
 * Monday - clean up brainstorming file & set up environment
 * Tuesday - user activities/methods, create migrations/tables, incorporate associations in the classes, look into API for DSM-V; TTY Prompt [(see article here)](https://medium.com/@cristina_9416/)
-* Wednesday - Finish methods, homepage?, text art [(see here)](http://patorjk.com/software/taag/#p=display&f=Three%20Point&t=ELEVATEmy-first-ruby-cli-app-8804058df294) (ex: three point or straight or stick letters)
+* Wednesday - Finish methods, homepage?, text art [(see here)](http://patorjk.com/software/taag/#p=display&f=Three%20Point&t=ELEVATEmy-first-ruby-cli-app-8804058df294) stick letters)
 * Thursday - Finish everything
 * Friday - Project walkthrough, final tests and record presentatoin
 
 # Brainstorming
 ##
-App Names:
-- Taboo
-- InnerZen
-- Balance
-- Conversation
-- Safe space
-- Validate
-- Guidance
-- Awareness seeking
-- Help!
-- Persist
-- Mindset
-- Mindshift
-- Lifeshift
+
 
 PsychCategory Name Examples:
+#https://www.samhsa.gov/find-help/national-helpline
 - PTSD
-- Domestic Violence
-- Suicide
+- Domestic Violence #Houston Area Women's Center
+- Suicide 
 - Depression
 - Eating Disorder
 - Anxiety
@@ -201,7 +207,14 @@ Resource Type Examples:
 - Criteria (DSM-V) - Use API? (see below)
 - Articles
 - Therapist
-- Quotes/Inspirational/Therapeutic Messages/Comfort/Affirmations
-- Hotlines
-- Support groups 
+- Affirming Messages
+- National SAMHSA Hotline
 
+# ** STRETCH GOAL **
+- Create a function where the user can save Resources they can reference back to
+
+Affirming Messages:
+- You are not alone. Here are some helpful resources for you:
+- Congrats, you've taken the first step across the bridge. Here are some helpful resources for you:
+- You're one step closer towards regaining self-empowerment in your life. Here are some helpful resources for you:
+- etc etc.
