@@ -35,13 +35,12 @@ A Command Line Interface App with CRUD functioning, incorporating:
 #
 #
 ## SQL Database Table Properties
-### Users Table Properties
+### User Table Properties
 * Full Name
 * Username (Email Address)
 * Password
 * Age
-* Gender
-* Email Address
+* Gender (M or F)
 * Location
 
 ### PsychCategory Table Properties
@@ -55,9 +54,9 @@ A Command Line Interface App with CRUD functioning, incorporating:
 
 ### Therapist Table Properties (?)
 * Name
-* Gender
+* Gender (M or F)
 * Ethnicity
-* Ratings
+* Rating
 * Years Experience
 * Offers Virtual Sessions? (Y or N)
 * Email Address
@@ -181,8 +180,8 @@ A Command Line Interface App with CRUD functioning, incorporating:
 
 # Project Tasks Schedule 
 (Tentative)
-* Monday - clean up brainstorming file & set up environment
-* Tuesday - user activities/methods, create migrations/tables, incorporate associations in the classes, look into API for DSM-V; TTY Prompt [(see article here)](https://medium.com/@cristina_9416/)
+
+* Tuesday - clean up methods with TTY Prompt [(see article here)](https://medium.com/@cristina_9416/), look into API for DSM-V
 * Wednesday - Finish methods, homepage?, text art [(see here)](http://patorjk.com/software/taag/#p=display&f=Three%20Point&t=ELEVATEmy-first-ruby-cli-app-8804058df294) stick letters)
 * Thursday - Finish everything
 * Friday - Project walkthrough, final tests and record presentatoin

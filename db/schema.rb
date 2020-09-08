@@ -10,6 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_09_08_194508) do
+
+  create_table "psych_categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.integer "resource_id"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string "type"
+    t.string "details"
+  end
+
+  create_table "saved_resources", force: :cascade do |t|
+    t.string "name"
+    t.integer "resource_id"
+  end
+
+  create_table "therapists", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.string "ethnicity"
+    t.integer "rating"
+    t.integer "years_experience"
+    t.string "virtual_sessions"
+    t.string "email_address"
+    t.string "psych_category_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "full_name"
+    t.string "username"
+    t.string "password"
+    t.integer "age"
+    t.string "gender"
+    t.string "email_address"
+    t.string "location"
+  end
 
 end
