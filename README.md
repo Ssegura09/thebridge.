@@ -1,59 +1,207 @@
-# Module One Final Project Guidelines
+# project name.
+### Technical Description: 
+A Command Line Interface App with CRUD functioning, incorporating:
+* Object Relational Mapping (with ActiveRecord)
+* SQL Databases (using sqlite3)
+* Object Orientation Models (via Ruby)
+* Remotely-Sourced Data Retrival (with API)
+* User-Friendly Navigation (with TTY prompts)
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
+<br />
 
-For your final project, we'll be building a Command Line database application.
+### App Description:
+(How we would describe it if it were on the App Store)
+* Point I
+* Point II
+* Point III
+#
+#
+## Models & Relationships
 
-## Project Requirements
+### User | PsychCategory (Join Model) | Resource
+<br />
 
-### Option One - Data Analytics Project
+### User <br />
+* A User has many PsychCategories <br />
+* A User has many Resources, through PsychCategory <br />
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have at minimum three models including one join model. This means you must have a many-to-many relationship.
-3. You should seed your database using data that you collect either from a CSV, a website by scraping, or an API.
-4. Your models should have methods that answer interesting questions about the data. For example, if you've collected info about movie reviews, what is the most popular movie? What movie has the most reviews?
-5. You should provide a CLI to display the return values of your interesting methods.  
-6. Use good OO design patterns. You should have separate classes for your models and CLI interface.
+### PsychCategory <br />
+* A PsychCategory belongs to a User <br />
+* A PsychCategory belongs to a Resource <br />
 
-  **Resource:** [Easy Access APIs](https://github.com/learn-co-curriculum/easy-access-apis)
+### Resource <br />
+* A Resource has many PsychCategories <br />
+* A Resource has many Users, through PsychCategory <br />
+#
+#
+## SQL Database Table Properties
+### Users Table Properties
+* Full Name
+* Username (Email Address)
+* Password
+* Age
+* Gender
+* Email Address
+* Location
 
-### Option Two - Command Line CRUD App
+### PsychCategory Table Properties
+* Name
+* User ID (Foreign Key)
+* Resource ID (Foreign Key)
 
-1. Access a Sqlite3 Database using ActiveRecord.
-2. You should have a minimum of three models.
-3. You should build out a CLI to give your user full CRUD ability for at least one of your resources. For example, build out a command line To-Do list. A user should be able to create a new to-do, see all todos, update a todo item, and delete a todo. Todos can be grouped into categories, so that a to-do has many categories and categories have many to-dos.
-4. Use good OO design patterns. You should have separate classes for your models and CLI interface.
+### Resource Table Properties
+* Type
 
-### Brainstorming and Proposing a Project Idea
+### Therapist Table Properties (?)
+* Name
+* Gender
+* Ethnicity
+* Ratings
+* Years Experience
+* Location
+* Email Address
+* Specialty, aka PsychCategory (Foreign Key?)
+#
+#
+## CRUD Abilities, aka User Stories
+"." Designates class methods | "#" Designates instance methods
 
-Projects need to be approved prior to launching into them, so take some time to brainstorm project options that will fulfill the requirements above.  You must have a minimum of four [user stories](https://en.wikipedia.org/wiki/User_story) to help explain how a user will interact with your app.  A user story should follow the general structure of `"As a <role>, I want <goal/desire> so that <benefit>"`. For example, if we were creating an app to randomly choose nearby restaurants on Yelp, we might write:
+## Create:
+### User
+* User can create an account and provide my information
 
-* As a user, I want to be able to enter my name to retrieve my records
-* As a user, I want to enter a location and be given a random nearby restaurant suggestion
-* As a user, I should be able to reject a suggestion and not see that restaurant suggestion again
-* As a user, I want to be able to save to and retrieve a list of favorite restaurant suggestions
+        .create_user
+### PsychCategory
+* User can blah blah blah
 
-## Instructions
+        .blah
+### Resource
+* User can blah blah blah
 
-1. Fork and clone this repository.
-2. Build your application. Make sure to commit early and commit often. Commit messages should be meaningful (clearly describe what you're doing in the commit) and accurate (there should be nothing in the commit that doesn't match the description in the commit message). Good rule of thumb is to commit every 3-7 mins of actual coding time. Most of your commits should have under 15 lines of code and a 2 line commit is perfectly acceptable.
-3. Make sure to create a good README.md with a short description, install instructions, a contributor's guide and a link to the license for your code.
-4. Make sure your project checks off each of the above requirements.
-5. Prepare a video demo (narration helps!) describing how a user would interact with your working project.
-    * The video should:
-      - Have an overview of your project. (2 minutes max)
-6. Prepare a presentation to follow your video. (3 minutes max)
-    * Your presentation should:
-      - Describe something you struggled to build, and show us how you ultimately implemented it in your code.
-      - Discuss 3 things you learned in the process of working on this project.
-      - Address what, if anything, you would change or add to what you have today.
-      - Present any code you would like to highlight.   
-7. *OPTIONAL, BUT RECOMMENDED*: Write a blog post about the project and process.
+        .blah
+#
+## Read:
+### User
+* User can blah
 
----
-### Common Questions:
-- How do I turn off my SQL logger?
-```ruby
-# in config/environment.rb add this line:
-ActiveRecord::Base.logger = nil
-```
+        .blah
+### PsychCategory
+* User can blah blah blah
+
+        .blah
+### Resource
+* User can blah blah blah
+
+        .blah
+#
+## Update:
+### User
+* User can blah
+
+        .blah
+### PsychCategory
+* User can blah blah blah
+
+        .blah
+### Resource
+* User can blah blah blah
+
+        .blah
+#
+## Delete:
+### User
+* User can blah
+
+        .blah
+### PsychCategory
+* User can blah blah blah
+
+        .blah
+### Resource
+* User can blah blah blah
+
+        .blah
+#
+#
+
+<br>
+
+# Related Information
+
+### Video Demo:
+ [Video Demo Link](https://video.com/blahblahblah)
+
+### Things Learned:
+* Thing I
+
+* Thing II
+
+* Thing III
+
+### Difficulties:
+* Difficulty I
+  * Implementation of Difficulty
+
+* Difficulty II
+  * Implementation of Difficulty
+
+### Changes/Modifications/Additions:
+* Change/Modification/Addition
+
+### Highlights
+* Highlight
+
+#
+
+## Thank you! <br> Bree Warren and Stephanie Segura
+
+#
+<br />
+<br />
+<br />
+<br />
+
+# Project Tasks Schedule 
+(Tentative)
+* Monday - clean up brainstorming file & set up environment
+* Tuesday - user activities/methods, create migrations/tables, incorporate associations in the classes, look into API for DSM-V; TTY Prompt [(see article here)](https://medium.com/@cristina_9416/)
+* Wednesday - Finish methods, homepage?, text art [(see here)](http://patorjk.com/software/taag/#p=display&f=Three%20Point&t=ELEVATEmy-first-ruby-cli-app-8804058df294) (ex: three point or straight or stick letters)
+* Thursday - Finish everything
+* Friday - Project walkthrough, final tests and record presentatoin
+
+# Brainstorming
+##
+App Names:
+- Taboo
+- InnerZen
+- Balance
+- Conversation
+- Safe space
+- Validate
+- Guidance
+- Awareness seeking
+- Help!
+- Persist
+- Mindset
+- Mindshift
+- Lifeshift
+
+PsychCategory Name Examples:
+- PTSD
+- Domestic Violence
+- Suicide
+- Depression
+- Eating Disorder
+- Anxiety
+- etc.
+- Unknown/Not Sure
+
+Resource Type Examples:
+- Specialty description
+- Criteria (DSM-V) - Use API? (see below)
+- Articles
+- Therapist
+- Quotes/Inspirational/Therapeutic Messages/Comfort/Affirmations
+- Hotlines
+- Support groups 
+
