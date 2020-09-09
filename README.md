@@ -67,6 +67,7 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Resource_ID (Foreign Key)
 
 <br />
+
 #
 #
 ## CRUD Abilities, aka User Stories
@@ -75,69 +76,67 @@ A Command Line Interface App with CRUD functioning, incorporating:
 ### Create
 * User is greeted with a welcome message upon opening the application
 
-        #greeting
+        AppCLI#greeting
 * User can create an account and provide their information
 
-        .blahblahblah
+        AppCLI#create_account
 ### Read
 * User can view all user profile information
 
-        .blah
+        User#profile_info
 * User can view a randomly-selected affirming message upon selection of PsychCategory
 
-        .blah
-* User can view list of all PyschCategories
+        AppCLI.affirming_message
+* User can view list of all PyschCategories, including an "Unknown/Not Sure" option
 
-        .blah
-* User can view list of selected PsychCategories specific to the User
+        PsychCategory.psych_category_list
+* User can view list of saved PsychCategories specific to the User
 
-        .blah
+        User#saved_psych_categories
 * User can view list of all Resources
 
-        .blah
-* User can access selected/saved Resources bookmarked/specific to the User
+        Resource.resource_list
+* User can access saved Resources bookmarked/specific to the User
 
-        .blah
+        User#saved_resources
 * User can view (PsychCategory) description
+        
+        PsychCategory#psych_category_description
 
-        .blah
 * User can view criteria of PsychCategory (return DSM-V API or DSM-V strings)
 
-        .blah
+        PsychCategory#psych_category_criteria
 * User can view (PsychCategory-related) articles
 
-        .blah
+        PsychCategory#psych_category_articles
 * User can view therapist infomation specific to selected PsychCategory
 
-        .blah
+        PsychCategory#psych_category_therapists
 * User can view (PsychCategory-related) hotline information (from Resources)
 
-        .blah
+        PsychCategory#psych_category_hotline
 #
 ### Update
 * User can update user profile information
 
-        .blahblahblah
-* User can choose a PsychCategory
+        AppCLI#update_user_profile
+* User can select a PsychCategory
 
-        .blahblahblah
-* User can choose "Unknown/Not Sure" as PsychCategory
+        AppCLI#select_psych_category
+* User can select a Resource Type
 
-        .blah
-* User can choose a Resource Type
-
-        .blahblahblah
+        AppCLI#select_resource
 #
 ### Delete:
-* User can delete a selected/saved Resource specific to User
+* User can delete a saved Resource specific to User
 
-        .blahblahblah
+        AppCLI#delete_saved_resource
 * User can delete a PsychCategory from selected list specific to User
 
-        .blahblahblah
+        AppCLI#delete_saved_psych_category
 * User can deactivate their account
 
-        .blahblahblah
+        AppCLI#deactivate_account
 #
 #
 
@@ -186,34 +185,16 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Thursday - Finish everything
 * Friday - Project walkthrough, final tests and record presentatoin
 
-# Brainstorming
+# Miscellaneous/ Brainstorming
 ##
-
-
-PsychCategory Name Examples:
-#https://www.samhsa.gov/find-help/national-helpline
-- PTSD
-- Domestic Violence #Houston Area Women's Center
-- Suicide 
-- Depression
-- Eating Disorder
-- Anxiety
-- etc.
-- Unknown/Not Sure
-
-Resource Type Examples:
-- Specialty description
-- Criteria (DSM-V) - Use API? (see below)
-- Articles
-- Therapist
-- Affirming Messages
-- National SAMHSA Hotline
-
-# ** STRETCH GOAL **
-- Create a function where the user can save Resources they can reference back to
 
 Affirming Messages:
 - You are not alone. Here are some helpful resources for you:
 - Congrats, you've taken the first step across the bridge. Here are some helpful resources for you:
 - You're one step closer towards regaining self-empowerment in your life. Here are some helpful resources for you:
 - etc etc.
+
+# ** STRETCH GOAL **
+- Create a function where the user can save Resources they can reference back to (I believe this is #saved_resource?)
+
+- For Users who select "Unkown/Not Sure" as PsychCategory, provide a questionnare to guide them towards a category that is most fitting

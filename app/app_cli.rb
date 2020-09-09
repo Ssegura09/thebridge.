@@ -3,28 +3,11 @@ require_relative '../config/environment.rb'
 $clear = system("clear")
 $prompt = TTY::Prompt.new
 $pastel = Pastel.new
+$user_instance = nil
 
 $clear
 
-puts $pastel.magenta('
-___       ___     __   __     __   __   ___  
- |  |__| |__     |__) |__) | |  \ / _` |__   
- |  |  | |___    |__) |  \ | |__/ \__> |___ .
- 
- ')
-
- def exit
-    $clear = system("clear")
-    puts $pastel.magenta( '
-   ___       ___     __   __     __   __   ___  
-    |  |__| |__     |__) |__) | |  \ / _` |__   
-    |  |  | |___    |__) |  \ | |__/ \__> |___ .
-    
-    ')
-    new_or_existing
-end
-
-def new_or_existing
+def greeting
 user_status = $prompt.select("Welcome to The Bridge. We're happy to have you here. Please select New or Existing User", %w(New Existing))
     if user_status == "New"
         system("clear")
@@ -37,6 +20,7 @@ end
 
 def login
     username = $prompt.ask("Please enter your username, or 0 to exit")
+    $user_instance.username = User.find_by(username: username)
     password = $prompt.mask("Welcome Back, #{username}! Enter your password, or 0 to exit")
 end
 
@@ -50,6 +34,19 @@ def create_account
         email_address = key(:email_address).ask("Email Address? or 0 to exit")
         location = key(:location).ask("City, State of Residence? (e.g. Houston, TX) or 0 to exit")
     end
-    #User.new(name: result[:full_name], username: reuslt[:username], etc)
+    # @new_user = User.new(name: result[:full_name], username: reuslt[:username], etc)
+    # #User.new(result)
     #make result either array (use index notation) or keep as hash (use bracket notation)
 end
+
+def exit
+    $clear = system("clear")
+    puts $pastel.magenta( '
+   ___       ___     __   __     __   __   ___  
+    |  |__| |__     |__) |__) | |  \ / _` |__   
+    |  |  | |___    |__) |  \ | |__/ \__> |___ .
+    
+    ')
+    new_or_existing
+end
+
