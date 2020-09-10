@@ -5,9 +5,9 @@ require_relative '../config/environment'
 # PsychCategory.destroy_all
 
 # Base Variables:
-## User
+# # User
 # steph = User.new(full_name: "Stephanie Segura", ...)
-# bree = User.new(full_name: "Bree Warren", username: "breewarren", password: "bree", age: 27, gender: "F", email_address: "ambreea.warren@gmail.com", location: "Houston, TX")
+bree = User.create(full_name: "Bree Warren", username: "breewarren", password: "bree", age: 27, gender: "F", email_address: "ambreea.warren@gmail.com", location: "Houston, TX")
 
 # ## PsychCategory
 # ptsd = PsychCategory.new()
