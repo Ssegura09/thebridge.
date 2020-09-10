@@ -61,65 +61,68 @@ The application is a mental health and wellness- centered application which acts
 "." Designates class methods | "#" Designates instance methods
 
 ### Create
-* User is greeted with a welcome message upon opening the application
+* User is greeted with a welcome message upon opening the application 
 
-        AppCLI#start
-        AppCLI#welcome
-* User can create an account and provide their information
+        AppCLI.start
+        AppCLI.welcome
+* User can create an account and provide their information 
 
-        AppCLI#create_account
+        AppCLI.create_account
 ### Read
-* User can view all user profile information
+* User can view all user profile information 
 
-        User#profile_info
-* User can view a randomly-selected affirming message upon successful login
+        User.profile_info
+* User can view a randomly-selected affirming message upon successful login 
 
         AppCLI.affirming_message
-* User can view list of all PyschCategories, including an "Unknown/Not Sure" option
+* User can view a short paragraph about the creators of "The Bridge." app 
+
+        AppCLI.about_us
+* User can view list of all PyschCategories, including an "Unknown/Not Sure" option 
 
         PsychCategory.psych_category_list
-* User can view list of all Resources
+* User can view list of all Resources 
 
         Resource.resource_list
-* User can view (PsychCategory) description
+* User can view (PsychCategory) description 
         
-        Resource#psych_category_description
+        Resource.psych_category_description
 
-* User can view criteria of PsychCategory (return DSM-V API or DSM-V strings)
+* User can view criteria of PsychCategory (return DSM-V API or DSM-V strings) 
 
-        Resource#psych_category_criteria
-* User can view (PsychCategory-related) articles
+        Resource.psych_category_criteria
+* User can view (PsychCategory-related) articles 
 
-        Resource#psych_category_articles
-* User can view therapist infomation specific to selected PsychCategory
+        Resource.psych_category_articles
+* User can view therapist infomation specific to selected PsychCategory 
 
-        Resource#psych_category_therapists
-* User can view (PsychCategory-related) hotline information (from Resources)
+        Resource.psych_category_therapists
+* User can view (PsychCategory-related) hotline information (from Resources) 
 
-        Resource#psych_category_hotline
+        Resource.psych_category_hotline
+* User can view all resources pertaining to a specific PsychCategory 
+
+        Resource.specific_category_resources
 #
 ### Update
-* User can access saved Resources bookmarked/specific to the User
-
-        User#saved_resources
 * User can update user profile information
 
-        AppCLI#update_user_profile
+        AppCLI.update_user_profile
 * User can view list of saved PsychCategories specific to the User
 
-        User#saved_psych_categories
+        User.saved_psych_categories
 #
 ### Delete:
-* User can delete a saved Resource specific to User
-
-        AppCLI#delete_saved_resource
 * User can delete a PsychCategory from selected list specific to User
-
-        AppCLI#delete_saved_psych_category
-* User can deactivate their account
-
-        AppCLI#deactivate_account
+        AppCLI.delete_saved_psych_category
 #
+### Additional Methods:
+* Users with existing account can input their username and password 
+        
+        AppCLI.username_login
+        AppCLI.password_login
+* User can exit the program by typing the letter "x" and pressing "enter" 
+        AppCLI.exit
 #
 
 <br>

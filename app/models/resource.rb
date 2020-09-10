@@ -14,18 +14,6 @@ class Resource < ActiveRecord::Base
         AppCLI.homepage
     end
 
-    # def self.articles
-    #     self.all.select do |resource|
-    #         binding.pry
-    #         if resource.resource_type == "Description"
-    #             resource.details 
-    #         end
-    #     end
-    # end
-
-    # def self.therapists
-    # end
-
     def self.psych_category_description
         description = Resource.find_by(resource_type: "Description")
         puts description.details
