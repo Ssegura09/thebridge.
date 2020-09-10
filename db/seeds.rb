@@ -17,7 +17,7 @@ depression_desc = Resource.create(resource_type: "Description", details: "Depres
 depression_art = Resource.create(resource_type: "Articles", details: "What is Depression?: https://www.psychiatry.org/patients-families/depression/what-is-depression")
 depression_doc = Resource.create(resource_type: "Therapists", details: "Name: Dr. Cole, Gender: M, Specialty: Depression, Email Address: drcole@gmail.com *This Therapist Offers Virtual Appointments")
 depression_hotline = Resource.create(resource_type: "Helplines", details: "SAMHSA’s National Helpline – 1-800-662-HELP (4357)")
-depression_criteria = Resource.create(resource_type: "Criteria", details: "DSM-5 American Psychiatric Association has the following criteria in order for one to be clinically diagnosed with depression:")
+depression_criteria = Resource.create(resource_type: "Criteria", details: "DSM-5 American Psychiatric Association has the following criteria in order for one to be clinically diagnosed with depression: https://www.medscape.com/answers/286759-14692/what-are-the-dsm-5-criteria-for-diagnosis-of-major-depressive-disorder-clinical-depression")
 
 ###Others
 ptsd_art = Resource.create(resource_type: "Articles", details: "Ways to Cope with PTSD: https://www.verywellmind.com/ways-of-coping-with-anxiety-2797619")
