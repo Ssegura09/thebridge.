@@ -47,15 +47,15 @@ unknown_doc = Resource.create(resource_type: "Therapists", details: "Name: Dr. L
 ## PsychCategory
 ptsd = PsychCategory.create(name: "PTSD", user_id: nil, resource_id: ptsd_art.id)
 suicide = PsychCategory.create(name: "Suicide", user_id: nil, resource_id: suicide_art.id)
-depression = PsychCategory.create(name: "Depression", user_id: steph.id, resource_id: depression_art.id)
+depression = PsychCategory.create(name: "Depression", user_id: bree.id, resource_id: depression_art.id)
 anxiety = PsychCategory.create(name: "Anxiety", user_id: bree.id, resource_id: anxiety_art.id)
 addiction = PsychCategory.create(name: "Addiction", user_id: nil, resource_id: addict_art.id)
-domestic_violence = PsychCategory.create(name: "Domestic Violence", user_id: steph.id, resource_id: domestic_hotline.id)
+domestic_violence = PsychCategory.create(name: "Domestic Violence", user_id: nil, resource_id: domestic_hotline.id)
 eating_disorder = PsychCategory.create(name: "Eating Disorder", user_id: nil, resource_id: eating_doc.id)
-ocd = PsychCategory.create(name: "Obessive Compulsive Disorder", user_id: steph.id, resource_id: ocd_doc.id)
+ocd = PsychCategory.create(name: "Obessive Compulsive Disorder", user_id: nil, resource_id: ocd_doc.id)
 bipolar = PsychCategory.create(name: "Bipolar Disorder", user_id: nil, resource_id: bipolar_doc.id)
-childhood_trauma = PsychCategory.create(name: "Childhood Trauma", user_id: bree.id, resource_id: child_doc.id)
-grief = PsychCategory.create(name: "Grief", user_id: bree.id, resource_id: grief_doc.id)
+childhood_trauma = PsychCategory.create(name: "Childhood Trauma", user_id: nil, resource_id: child_doc.id)
+grief = PsychCategory.create(name: "Grief", user_id: nil, resource_id: grief_doc.id)
 unknown = PsychCategory.create(name: "Unknown/I'm Not Sure", user_id: nil, resource_id: unknown_doc.id)
 
 binding.pry

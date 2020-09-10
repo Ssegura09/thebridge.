@@ -107,14 +107,15 @@ The application is a mental health and wellness- centered application which acts
 ### Update
 * User can update user profile information
 
-        AppCLI.update_user_profile
+        AppCLI#update_user_profile
 * User can view list of saved PsychCategories specific to the User
 
-        User.saved_psych_categories
+        User#saved_psych_categories
 #
 ### Delete:
 * User can delete a PsychCategory from selected list specific to User
-        AppCLI.delete_saved_psych_category
+
+        AppCLI#delete_category
 #
 ### Additional Methods:
 * Users with existing account can input their username and password 
@@ -135,7 +136,7 @@ The application is a mental health and wellness- centered application which acts
 ### Things Learned:
 * Using a global variable to incorporate throughout a particalular scope and associate User's input to then be used to interact with the Database
 
-* 
+* Applying the many features of TTY Prompts to the interface of a Command Line 
 
 * Thing III
 
@@ -151,6 +152,9 @@ The application is a mental health and wellness- centered application which acts
 
 * Including a questionnare/guide for Users that select  "Unkown/Not Sure" as PsychCategory
 
+* Implementing Username/Password Validation upon User login
+
+* Continuing formatting to enhance User-friendliness of navigation within the app
 
 ### Highlights
 * Highlight
