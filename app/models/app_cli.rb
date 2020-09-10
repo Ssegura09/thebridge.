@@ -195,6 +195,12 @@ class AppCLI
                 puts ''
                 category_to_save = $prompt.ask("Type the name of the Category that you would like to save to your profile.")
                 $user_instance.saved_psych_categories(category_to_save)
+                puts ''
+                puts ''
+                saved_categories = $user_instance.psych_categories.map {|psych_category| psych_category.name}
+                puts "Your saved categories include: #{saved_categories.flatten}."
+                sleep (3)
+                self.homepage
             elsif category_options == "Back"
                 self.homepage
             end

@@ -108,7 +108,7 @@ The application is a mental health and wellness- centered application which acts
 * User can update user profile information
 
         AppCLI#update_user_profile
-* User can view list of saved PsychCategories specific to the User
+* User can select and view list of preferred PsychCategories specific to oneself
 
         User#saved_psych_categories
 #
@@ -138,14 +138,14 @@ The application is a mental health and wellness- centered application which acts
 
 * Applying the many features of TTY Prompts to the interface of a Command Line 
 
-* Thing III
+* Understanding the importance of Git: working with branches vs. master, merging, pull requests, committing, etc.
 
 ### Difficulties:
-* Difficulty I
-  * Implementation of Difficulty
+* Interaction with Git/Github
+  * Re-evaluated, utilized Google seraches, and created a strategy as not to override our work
 
-* Difficulty II
-  * Implementation of Difficulty
+* Incorporation of Global Variables
+  * Researched, considered the scope of our object, and implemented its function into our programming
 
 ### Changes/Modifications/Additions:
 * Incorporating Remotely-Sourced Data Retrival (with API) to retrieve PsychCategory material from the DSM-5
@@ -154,10 +154,12 @@ The application is a mental health and wellness- centered application which acts
 
 * Implementing Username/Password Validation upon User login
 
-* Continuing formatting to enhance User-friendliness of navigation within the app
+* Continuing formatting to enhance User-friendliness and overall aesthetic of interface and of navigation within the app
 
 ### Highlights
-* Highlight
+* The User#saved_psych_categories method
+
+* The creative code associated using TTY:Prompt
 
 #
 
