@@ -18,11 +18,12 @@ class User < ActiveRecord::Base
         puts "Email Address: #{user.email_address}"
         puts "Location: #{user.location}"
         puts '___________________________________________'
+        sleep(2)
         AppCLI.homepage
     end
 
     def saved_psych_categories(category)
-        # binding.pry
+        binding.pry
         saved_category = PsychCategory.find_by(name: category)
         self.psych_categories << saved_category
     end

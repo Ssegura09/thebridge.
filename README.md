@@ -4,17 +4,14 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Object Relational Mapping (with ActiveRecord)
 * SQL Databases (using sqlite3)
 * Object Orientation Models (via Ruby)
-* Remotely-Sourced Data Retrival (with API)
 * User-Friendly Navigation (with TTY prompts)
 
 <br />
 
 ### App Description:
-(How we would describe it if it were on the App Store)
-* Point I
-* Point II
-* Point III
+The application is a mental health and wellness- centered application which acts as a bridge between its Users and various Resources of common psychological disorders, or PsychCategories,  by providing them in a manner that is accessible and assuring to their uncertainty of where to begin the path of knowlege and, ultimately, treatment. See 'AboutUs' in the app for more information.
 #
+        Instructions: Run "ruby app/run.rb" in the terminal to begin the application
 #
 ## Models & Relationships
 
@@ -133,9 +130,9 @@ A Command Line Interface App with CRUD functioning, incorporating:
  [Video Demo Link](https://video.com/blahblahblah)
 
 ### Things Learned:
-* Thing I
+* Using a global variable to incorporate throughout a particalular scope and associate User's input to then be used to interact with the Database
 
-* Thing II
+* 
 
 * Thing III
 
@@ -147,7 +144,10 @@ A Command Line Interface App with CRUD functioning, incorporating:
   * Implementation of Difficulty
 
 ### Changes/Modifications/Additions:
-* Change/Modification/Addition
+* Incorporating Remotely-Sourced Data Retrival (with API) to retrieve PsychCategory material from the DSM-5
+
+* Including a questionnare/guide for Users that select  "Unkown/Not Sure" as PsychCategory
+
 
 ### Highlights
 * Highlight
@@ -155,24 +155,3 @@ A Command Line Interface App with CRUD functioning, incorporating:
 #
 
 ## Thank you! <br> Bree Warren and Stephanie Segura
-
-#
-<br />
-<br />
-<br />
-<br />
-
-# Project Tasks Schedule 
-(Tentative)
-
-* Tuesday - clean up methods with TTY Prompt [(see article here)](https://medium.com/@cristina_9416/), look into API for DSM-V
-* Wednesday - Finish methods, homepage?, text art [(see here)](http://patorjk.com/software/taag/#p=display&f=Three%20Point&t=ELEVATEmy-first-ruby-cli-app-8804058df294) stick letters)
-* Thursday - Finish everything
-* Friday - Project walkthrough, final tests and record presentatoin
-
-
-
-# ** STRETCH GOAL **
-- Create a function where the user can save Resources they can reference back to (I believe this is #saved_resource?)
-
-- For Users who select "Unkown/Not Sure" as PsychCategory, provide a questionnare to guide them towards a category that is most fitting

@@ -6,8 +6,6 @@ $pastel = Pastel.new
 $user_instance = nil
 $line = '__________________________'
 
-
-
 def self.start
     puts ''
     puts ''
@@ -56,13 +54,15 @@ end
 
 def self.username_login
     username = $prompt.ask("Please enter your username, or X to exit")
-    $user_instance = User.find_by(username: username)
+    $user_instance = User.find_by(username: username) #causing error if username doesn't match records
+    
     if username.upcase == 'X'
         self.exit
     else
         puts "Welcome Back, #{$user_instance.username}!"
         self.password_login
     end
+    
 end
 
 def self.password_login
@@ -86,7 +86,6 @@ def self.affirming_message
     sleep(2)
     self.homepage
 end
-
 
 def self.create_account
     result = $prompt.collect do
@@ -123,10 +122,33 @@ def self.create_account
     end
     $user_instance = User.create(full_name: result[:full_name], username: result[:username], password: result[:password], age: result[:age], gender: result[:gender], email_address: result[:email_address], location: result[:location])
     system("clear")
+    puts ''
     puts "Great, #{$user_instance.username}! Your account was successfully created."
     self.affirming_message
 end
 
+def self.about_us
+    system("clear")
+    puts $pastel.green('
+___       ___     __   __     __   __   ___  
+ |  |__| |__     |__) |__) | |  \ / _` |__   
+ |  |  | |___    |__) |  \ | |__/ \__> |___ .')
+ puts "
+            _ |_  _   _|_      _
+           (_||_)(_)|_||   |_|_\
+           "
+puts ''
+puts "We believe that addressing mental health should not be intimidating, but welcoming."
+puts ''
+puts "This application, created by founders Bree Warren and Stephanie Segura, is meant to act"
+puts "as a bridge between uncertainties about one's struggle with mental health, and the"
+puts "path towards healing."
+puts ''
+puts "We connect our Users to various Resources of common psychological disorders, or PsychCategories, and provide them 
+in a manner that is accessible and assuring to their efforts of gaining knowledge and treatment."
+sleep(7)
+self.homepage
+end
 
 def self.homepage
     puts ''
@@ -142,8 +164,7 @@ ___       ___     __   __     __   __   ___
     options = $prompt.select("How may we guide you along The Bridge today, #{$user_instance.username}?", %w(AboutUs Profile Categories Resources Exit))
 
     if options == "AboutUs"
-        #puts desciption of the app and maybe a short bio (or just acknowlegdement about the founders)
-
+        self.about_us
     elsif options == "Profile"
         profile_options = $prompt.select("Profile Options:", %w(Details Saved Deactivate Back))
         
@@ -152,9 +173,9 @@ ___       ___     __   __     __   __   ___
         elsif profile_options == "Saved"
             saved_options = $prompt.select("Saved Options:", %w(Categories Resources Back))
             if saved_options == "Categories"
-                #run saved_psych_categories
+                #run saved_psych_categories (Depression)
             elsif saved_options == "Resources"
-                #run saved_resources
+                #run saved_resources ()
             elsif saved_options == "Back"
                 self.homepage
             end
@@ -196,6 +217,5 @@ ___       ___     __   __     __   __   ___
     end
 
 end
-
 
 end

@@ -58,12 +58,5 @@ childhood_trauma = PsychCategory.create(name: "Childhood Trauma", user_id: bree.
 grief = PsychCategory.create(name: "Grief", user_id: bree.id, resource_id: grief_doc.id)
 unknown = PsychCategory.create(name: "Unknown/I'm Not Sure", user_id: nil, resource_id: unknown_doc.id)
 
-
-# criteria = Resource.create()#API - DSM-5
-
-# Association Variables:
-# (example) test_kitten = Kitten.create(name: "Mitten", owner_id: antonio.id)
-# Additional Variables:
-
 binding.pry
 0

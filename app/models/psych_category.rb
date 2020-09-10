@@ -9,6 +9,7 @@ class PsychCategory < ActiveRecord::Base
         puts '___________________________________________'
         puts PsychCategory.all.collect {|psych_category| psych_category.name}
         puts '___________________________________________'
+        sleep(2)
         AppCLI.homepage
     end
 
