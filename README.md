@@ -90,15 +90,9 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * User can view list of all PyschCategories, including an "Unknown/Not Sure" option
 
         PsychCategory.psych_category_list
-* User can view list of saved PsychCategories specific to the User
-
-        User#saved_psych_categories
 * User can view list of all Resources
 
         Resource.resource_list
-* User can access saved Resources bookmarked/specific to the User
-
-        User#saved_resources
 * User can view (PsychCategory) description
         
         PsychCategory#psych_category_description
@@ -117,15 +111,15 @@ A Command Line Interface App with CRUD functioning, incorporating:
         PsychCategory#psych_category_hotline
 #
 ### Update
+* User can access saved Resources bookmarked/specific to the User
+
+        User#saved_resources
 * User can update user profile information
 
         AppCLI#update_user_profile
-* User can select a PsychCategory
+* User can view list of saved PsychCategories specific to the User
 
-        AppCLI#select_psych_category
-* User can select a Resource Type
-
-        AppCLI#select_resource
+        User#saved_psych_categories
 #
 ### Delete:
 * User can delete a saved Resource specific to User

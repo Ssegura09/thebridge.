@@ -5,9 +5,9 @@ AppCLI#greeting - DONE
 AppCLI#create_account
 
 ### Read
-User#profile_info
+User#profile_info - BREE
 AppCLI.affirming_message
-PsychCategory.psych_category_list
+PsychCategory.psych_category_list - STEPH
 User#saved_psych_categories
 Resource.resource_list
 User#saved_resources
