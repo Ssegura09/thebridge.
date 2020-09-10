@@ -5,7 +5,7 @@ AppCLI#greeting - DONE
 AppCLI#create_account
 
 ### Read
-User#profile_info
+User#profile_info #Bree
 AppCLI.affirming_message
 PsychCategory.psych_category_list
 User#saved_psych_categories
