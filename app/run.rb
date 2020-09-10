@@ -4,4 +4,4 @@ require_relative '../config/environment.rb'
 # pid = fork{exec 'afplay', "the_bridge.mp3"}
 
 #Begins the application
-start
+AppCLI.start

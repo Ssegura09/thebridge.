@@ -52,16 +52,6 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Type
 * Details
 
-### Therapist Table Properties (?)
-* Name
-* Gender (M or F)
-* Ethnicity
-* Rating
-* Years Experience
-* Offers Virtual Sessions? (Y or N)
-* Email Address
-* PsychCategory_ID (Foreign Key)
-
 ### Saved Resources Table Properties
 * Name
 * Resource_ID (Foreign Key)
@@ -76,7 +66,8 @@ A Command Line Interface App with CRUD functioning, incorporating:
 ### Create
 * User is greeted with a welcome message upon opening the application
 
-        AppCLI#greeting
+        AppCLI#start
+        AppCLI#welcome
 * User can create an account and provide their information
 
         AppCLI#create_account
@@ -84,7 +75,7 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * User can view all user profile information
 
         User#profile_info
-* User can view a randomly-selected affirming message upon selection of PsychCategory
+* User can view a randomly-selected affirming message upon successful login
 
         AppCLI.affirming_message
 * User can view list of all PyschCategories, including an "Unknown/Not Sure" option
@@ -95,20 +86,20 @@ A Command Line Interface App with CRUD functioning, incorporating:
         Resource.resource_list
 * User can view (PsychCategory) description
         
-        PsychCategory#psych_category_description
+        Resource#psych_category_description
 
 * User can view criteria of PsychCategory (return DSM-V API or DSM-V strings)
 
-        PsychCategory#psych_category_criteria
+        Resource#psych_category_criteria
 * User can view (PsychCategory-related) articles
 
-        PsychCategory#psych_category_articles
+        Resource#psych_category_articles
 * User can view therapist infomation specific to selected PsychCategory
 
-        PsychCategory#psych_category_therapists
+        Resource#psych_category_therapists
 * User can view (PsychCategory-related) hotline information (from Resources)
 
-        PsychCategory#psych_category_hotline
+        Resource#psych_category_hotline
 #
 ### Update
 * User can access saved Resources bookmarked/specific to the User
@@ -179,14 +170,7 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Thursday - Finish everything
 * Friday - Project walkthrough, final tests and record presentatoin
 
-# Miscellaneous/ Brainstorming
-##
 
-Affirming Messages:
-- You are not alone. Here are some helpful resources for you:
-- Congrats, you've taken the first step across the bridge. Here are some helpful resources for you:
-- You're one step closer towards regaining self-empowerment in your life. Here are some helpful resources for you:
-- etc etc.
 
 # ** STRETCH GOAL **
 - Create a function where the user can save Resources they can reference back to (I believe this is #saved_resource?)

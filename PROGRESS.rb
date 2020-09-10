@@ -1,16 +1,17 @@
 ## Progress
-#
+
+# ADD OTHERS FROM THE APPCLI FILE!!!!!!
+
 ### Create
-AppCLI#greeting - DONE
-AppCLI#create_account
+# AppCLI#start - DONE
+# AppCLI#welcome - DONE
+AppCLI#create_account - IN PROGRESS
 
 ### Read
-User#profile_info - BREE
-AppCLI.affirming_message
-PsychCategory.psych_category_list - STEPH
-User#saved_psych_categories
-Resource.resource_list
-User#saved_resources
+User#profile_info - DONE
+AppCLI.affirming_message - DONE
+PsychCategory.psych_category_list - DONE
+Resource.resource_list - DONE
 PsychCategory#psych_category_description
 PsychCategory#psych_category_criteria
 PsychCategory#psych_category_articles
@@ -19,8 +20,8 @@ PsychCategory#psych_category_hotline
 
 ### Update
 AppCLI#update_user_profile
-AppCLI#select_psych_category
-AppCLI#select_resource
+User#saved_psych_categories - 
+User#saved_resources - TRICKY
 
 ### Delete:
 AppCLI#delete_saved_resource
