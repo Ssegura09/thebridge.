@@ -173,9 +173,11 @@ ___       ___     __   __     __   __   ___
         elsif profile_options == "Saved"
             saved_options = $prompt.select("Saved Options:", %w(Categories Resources Back))
             if saved_options == "Categories"
-                #run saved_psych_categories (Depression)
+                #
             elsif saved_options == "Resources"
-                #run saved_resources ()
+                system("clear")
+                puts "Here are your Saved Resources for your selection:"
+                Resource.specific_category_resources
             elsif saved_options == "Back"
                 self.homepage
             end
