@@ -89,36 +89,13 @@ end
 
 def self.create_account
     result = $prompt.collect do
-
-        full_name = key(:full_name).ask("To create a new account, enter your Full Name, or X to exit")
-        if full_name.upcase == 'X'
-            exit
-        end
-        username = key(:username).ask("Enter your Username, or X to exit")
-        if username.upcase == 'X'
-            exit
-        end
-        password = key(:password).mask("Enter your Password, or X to exit")
-        if password.upcase == 'X'
-            exit
-        end
-        age = key(:age).ask("Enter your Age (In Years), or X to exit")
-        if age.upcase == 'X'
-            exit
-        end
-        gender = key(:gender).ask("Enter your Gender (M, F, PNTA [Prefer Not to Answer], or X to exit)")
-        if gender.upcase == 'X'
-            exit
-        end
-        email_address = key(:email_address).ask("Enter your Email Address, or X to exit")
-        if email_address.upcase == 'X'
-            exit
-        end
-        location = key(:location).ask("Enter your City, State of Residence (e.g. Houston, TX), or X to exit")
-        if location.upcase == 'X'
-            exit
-        end
-
+        full_name = key(:full_name).ask("To create a new account, enter your Full Name")
+        username = key(:username).ask("Enter your Username")
+        password = key(:password).mask("Enter your Password")
+        age = key(:age).ask("Enter your Age (In Years)")
+        gender = key(:gender).ask("Enter your Gender (M, F, PNTA [Prefer Not to Answer]")
+        email_address = key(:email_address).ask("Enter your Email Address")
+        location = key(:location).ask("Enter your City, State of Residence (e.g. Houston, TX)")
     end
     $user_instance = User.create(full_name: result[:full_name], username: result[:username], password: result[:password], age: result[:age], gender: result[:gender], email_address: result[:email_address], location: result[:location])
     system("clear")
@@ -166,14 +143,19 @@ ___       ___     __   __     __   __   ___
     if options == "AboutUs"
         self.about_us
     elsif options == "Profile"
-        profile_options = $prompt.select("Profile Options:", %w(Details Saved Deactivate Back))
+        profile_options = $prompt.select("Profile Options:", %w(Details Saved Delete Back))
         
         if profile_options == "Details"
             $user_instance.profile_info($user_instance)
         elsif profile_options == "Saved"
             saved_options = $prompt.select("Saved Options:", %w(Categories Resources Back))
             if saved_options == "Categories"
-                #
+                saved_categories = $user_instance.psych_categories.map {|psych_category| psych_category.name}
+                puts ''
+                puts ''
+                puts "Your saved categories include: #{saved_categories.flatten}."
+                sleep (3)
+                self.homepage
             elsif saved_options == "Resources"
                 system("clear")
                 puts "Here are your Saved Resources for your selection:"
@@ -184,7 +166,18 @@ ___       ___     __   __     __   __   ___
         elsif profile_options == "Back"
             self.homepage
         else 
-            #run deactivate_account
+        saved_categories = $user_instance.psych_categories.map {|psych_category| psych_category.name}
+        puts "Your saved categories include: #{saved_categories.flatten}."
+        puts ''
+        puts ''
+        category_to_delete = $prompt.ask("Type the name of the Category that you would like to delete from your profile.")
+        # binding.pry
+        $user_instance.delete_category(category_to_delete)
+        saved_categories = $user_instance.psych_categories.map {|psych_category| psych_category.name}
+        puts "Your saved categories include: #{saved_categories.flatten}."
+        puts ''
+        sleep (3)
+        self.homepage
         end
 
     elsif options == "Categories"
@@ -200,9 +193,8 @@ ___       ___     __   __     __   __   ___
             puts PsychCategory.all.collect {|psych_category| psych_category.name}
             puts '___________________________________________'
             puts ''
-            cat_to_save = $prompt.ask("Type the name of the Category that you would like to save to your profile.")
-            capitalized_cat_to_save = cat_to_save.capitalize
-            $user_instance.saved_psych_categories(capitalized_cat_to_save)
+            category_to_save = $prompt.ask("Type the name of the Category that you would like to save to your profile.")
+            $user_instance.saved_psych_categories(category_to_save)
         elsif category_options == "Back"
             self.homepage
         end

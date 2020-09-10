@@ -9,7 +9,7 @@ A Command Line Interface App with CRUD functioning, incorporating:
 <br />
 
 ### App Description:
-The application is a mental health and wellness- centered application which acts as a bridge between its Users and various Resources of common psychological disorders, or PsychCategories,  by providing them in a manner that is accessible and assuring to their uncertainty of where to begin the path of knowlege and, ultimately, treatment. See 'AboutUs' in the app for more information.
+The application is a mental health and wellness-centered application which acts as a bridge between its Users and various Resources of common psychological disorders, or PsychCategories,  by providing them in a manner that is accessible and assuring to their uncertainty of where to begin the path of knowlege and, ultimately, treatment. See 'AboutUs' in The Bridge app for more information.
 #
         Instructions: Run "ruby app/run.rb" in the terminal to begin the application
 #
@@ -132,7 +132,7 @@ The application is a mental health and wellness- centered application which acts
 ### Things Learned:
 * Using a global variable to incorporate throughout a particalular scope and associate User's input to then be used to interact with the Database
 
-* 
+* Applying the many features of TTY Prompts to the interface of a Command Line 
 
 * Thing III
 
@@ -148,6 +148,9 @@ The application is a mental health and wellness- centered application which acts
 
 * Including a questionnare/guide for Users that select  "Unkown/Not Sure" as PsychCategory
 
+* Implementing Username/Password Validation upon User login
+
+* Continuing formatting to enhance User-friendliness of navigation within the app
 
 ### Highlights
 * Highlight

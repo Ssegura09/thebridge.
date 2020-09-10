@@ -14,46 +14,34 @@ class Resource < ActiveRecord::Base
         AppCLI.homepage
     end
 
-    # def self.articles
-    #     self.all.select do |resource|
-    #         binding.pry
-    #         if resource.resource_type == "Description"
-    #             resource.details 
-    #         end
-    #     end
-    # end
-
-    # def self.therapists
-    # end
-
     def self.psych_category_description
         description = Resource.find_by(resource_type: "Description")
         puts description.details
-        sleep(2)
+        sleep(3)
     end
 
     def self.psych_category_criteria
         criteria = Resource.find_by(resource_type: "Criteria")
         puts criteria.details
-        sleep(2)
+        sleep(3)
     end
     
     def self.psych_category_articles
         articles = Resource.find_by(resource_type: "Articles")
         puts articles.details
-        sleep(2)
+        sleep(3)
     end
 
     def self.psych_category_therapists
         therapists = Resource.find_by(resource_type: "Therapists")
         puts therapists.details
-        sleep(2)
+        sleep(3)
     end
 
     def self.psych_category_hotline
         hotlines = Resource.find_by(resource_type: "Helplines")
         puts hotlines.details
-        sleep(2)
+        sleep(3)
         AppCLI.homepage
     end
 
