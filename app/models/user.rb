@@ -30,17 +30,22 @@ class User < ActiveRecord::Base
     end
 
     def delete_category(category_to_delete)
-        category = category_to_delete.capitalize
-        deleted_category = PsychCategory.find_by(name: category)
-        deleted_category.user_id = nil
-        delete_category.save
-        puts "You have successfully deleted the category #{deleted_category.name}."
+    # clean up whne time permits
+    deleted = category_to_delete.capitalize
+    puts ''
+    puts ''
+    sleep (2)
+    puts "You have successfully deleted #{deleted} from your saved Categories."
     end
 
 
-    def update_user_profile
-        
-    end
+    # def update_user_profile(response, response2)
+    #     binding.pry
+    #     puts ''
+    #     puts ''
+    #     sleep (2)
+    #     puts "Your #{response} has successfully been updated to #{response2}."
+    # end
 
 end
 

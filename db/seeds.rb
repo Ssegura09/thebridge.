@@ -15,7 +15,7 @@ bree = User.create(full_name: "Bree Warren", username: "breewarren", password: "
 #### Depression
 depression_desc = Resource.create(resource_type: "Description", details: "Depression (major depressive disorder) is a common and serious medical illness that negatively affects how you feel, the way you think and how you act. Fortunately, it is also treatable. Depression causes feelings of sadness and/or a loss of interest in activities once enjoyed. It can lead to a variety of emotional and physical problems and can decrease a person’s ability to function at work and at home.")
 depression_art = Resource.create(resource_type: "Articles", details: "What is Depression?: https://www.psychiatry.org/patients-families/depression/what-is-depression")
-depression_doc = Resource.create(resource_type: "Therapists", details: "Name: Dr. Cole, Gender: M, Specialty: Depression, Email Address: drcole@gmail.com *This Therapist Offers Virtual Appointments")
+depression_doc = Resource.create(resource_type: "Therapists", details: "Name: Drew Coleman, Gender: M, Specialty: Depression and Individual Counseling, Email Address: drdcole@gmail.com   * This Therapist Offers Virtual Appointments * ")
 depression_hotline = Resource.create(resource_type: "Helplines", details: "SAMHSA’s National Helpline – 1-800-662-HELP (4357)")
 depression_criteria = Resource.create(resource_type: "Criteria", details: "DSM-5 American Psychiatric Association has the following criteria in order for one to be clinically diagnosed with depression: https://www.medscape.com/answers/286759-14692/what-are-the-dsm-5-criteria-for-diagnosis-of-major-depressive-disorder-clinical-depression")
 
