@@ -197,6 +197,8 @@ class AppCLI
                 puts ''
                 puts ''
                 puts "Your #{response} has successfully been updated to #{response2}."
+                sleep(2)
+                system('clear')
                 self.homepage
                 # $user_instance.profile_info($user_instance)
 
@@ -215,6 +217,7 @@ class AppCLI
                     puts "#{$user_instance.username}, here are your saved Resources:"
                     puts ''
                     Resource.specific_category_resources
+                    self.homepage
                 elsif saved_options == "Back"
                     self.homepage
                 end
@@ -237,6 +240,7 @@ class AppCLI
                 # puts "Your saved categories include: #{saved_categories.flatten}."
                 # puts ''
                 sleep (3)
+                system ("clear")
                 self.homepage
             end
     
