@@ -125,7 +125,7 @@ class AppCLI
     puts ''
     puts "We connect our Users to various Resources of common psychological disorders, or PsychCategories, and provide them" 
     puts "in a manner that is accessible and assuring to their efforts of gaining knowledge and treatment."
-    sleep(10)
+    sleep(2)
     self.homepage
     end
     

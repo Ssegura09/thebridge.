@@ -41,7 +41,7 @@ class Resource < ActiveRecord::Base
     def self.psych_category_hotline
         hotlines = Resource.find_by(resource_type: "Helplines")
         puts hotlines.details
-        sleep(10)
+        sleep(3)
         AppCLI.homepage
     end
 
