@@ -4,17 +4,14 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Object Relational Mapping (with ActiveRecord)
 * SQL Databases (using sqlite3)
 * Object Orientation Models (via Ruby)
-* Remotely-Sourced Data Retrival (with API)
 * User-Friendly Navigation (with TTY prompts)
 
 <br />
 
 ### App Description:
-(How we would describe it if it were on the App Store)
-* Point I
-* Point II
-* Point III
+The application is a mental health and wellness- centered application which acts as a bridge between its Users and various Resources of common psychological disorders, or PsychCategories,  by providing them in a manner that is accessible and assuring to their uncertainty of where to begin the path of knowlege and, ultimately, treatment. See 'AboutUs' in the app for more information.
 #
+        Instructions: Run "ruby app/run.rb" in the terminal to begin the application
 #
 ## Models & Relationships
 
@@ -52,16 +49,6 @@ A Command Line Interface App with CRUD functioning, incorporating:
 * Type
 * Details
 
-### Therapist Table Properties (?)
-* Name
-* Gender (M or F)
-* Ethnicity
-* Rating
-* Years Experience
-* Offers Virtual Sessions? (Y or N)
-* Email Address
-* PsychCategory_ID (Foreign Key)
-
 ### Saved Resources Table Properties
 * Name
 * Resource_ID (Foreign Key)
@@ -74,64 +61,69 @@ A Command Line Interface App with CRUD functioning, incorporating:
 "." Designates class methods | "#" Designates instance methods
 
 ### Create
-* User is greeted with a welcome message upon opening the application
+* User is greeted with a welcome message upon opening the application 
 
-        AppCLI#greeting
-* User can create an account and provide their information
+        AppCLI.start
+        AppCLI.welcome
+* User can create an account and provide their information 
 
-        AppCLI#create_account
+        AppCLI.create_account
 ### Read
-* User can view all user profile information
+* User can view all user profile information 
 
-        User#profile_info
-* User can view a randomly-selected affirming message upon selection of PsychCategory
+        User.profile_info
+* User can view a randomly-selected affirming message upon successful login 
 
         AppCLI.affirming_message
-* User can view list of all PyschCategories, including an "Unknown/Not Sure" option
+* User can view a short paragraph about the creators of "The Bridge." app 
+
+        AppCLI.about_us
+* User can view list of all PyschCategories, including an "Unknown/Not Sure" option 
 
         PsychCategory.psych_category_list
-* User can view list of all Resources
+* User can view list of all Resources 
 
         Resource.resource_list
-* User can view (PsychCategory) description
+* User can view (PsychCategory) description 
         
-        PsychCategory#psych_category_description
+        Resource.psych_category_description
 
-* User can view criteria of PsychCategory (return DSM-V API or DSM-V strings)
+* User can view criteria of PsychCategory (return DSM-V API or DSM-V strings) 
 
-        PsychCategory#psych_category_criteria
-* User can view (PsychCategory-related) articles
+        Resource.psych_category_criteria
+* User can view (PsychCategory-related) articles 
 
-        PsychCategory#psych_category_articles
-* User can view therapist infomation specific to selected PsychCategory
+        Resource.psych_category_articles
+* User can view therapist infomation specific to selected PsychCategory 
 
-        PsychCategory#psych_category_therapists
-* User can view (PsychCategory-related) hotline information (from Resources)
+        Resource.psych_category_therapists
+* User can view (PsychCategory-related) hotline information (from Resources) 
 
-        PsychCategory#psych_category_hotline
+        Resource.psych_category_hotline
+* User can view all resources pertaining to a specific PsychCategory 
+
+        Resource.specific_category_resources
 #
 ### Update
-* User can access saved Resources bookmarked/specific to the User
-
-        User#saved_resources
 * User can update user profile information
 
         AppCLI#update_user_profile
-* User can view list of saved PsychCategories specific to the User
+* User can select and view list of preferred PsychCategories specific to oneself
 
         User#saved_psych_categories
 #
 ### Delete:
-* User can delete a saved Resource specific to User
-
-        AppCLI#delete_saved_resource
 * User can delete a PsychCategory from selected list specific to User
 
-        AppCLI#delete_saved_psych_category
-* User can deactivate their account
-
-        AppCLI#deactivate_account
+        AppCLI#delete_category
 #
+### Additional Methods:
+* Users with existing account can input their username and password 
+        
+        AppCLI.username_login
+        AppCLI.password_login
+* User can exit the program by typing the letter "x" and pressing "enter" 
+        AppCLI.exit
 #
 
 <br>
@@ -142,53 +134,33 @@ A Command Line Interface App with CRUD functioning, incorporating:
  [Video Demo Link](https://video.com/blahblahblah)
 
 ### Things Learned:
-* Thing I
+* Using a global variable to incorporate throughout a particalular scope and associate User's input to then be used to interact with the Database
 
-* Thing II
+* Applying the many features of TTY Prompts to the interface of a Command Line 
 
-* Thing III
+* Understanding the importance of Git: working with branches vs. master, merging, pull requests, committing, etc.
 
 ### Difficulties:
-* Difficulty I
-  * Implementation of Difficulty
+* Interaction with Git/Github
+  * Re-evaluated, utilized Google seraches, and created a strategy as not to override our work
 
-* Difficulty II
-  * Implementation of Difficulty
+* Incorporation of Global Variables
+  * Researched, considered the scope of our object, and implemented its function into our programming
 
 ### Changes/Modifications/Additions:
-* Change/Modification/Addition
+* Incorporating Remotely-Sourced Data Retrival (with API) to retrieve PsychCategory material from the DSM-5
+
+* Including a questionnare/guide for Users that select  "Unkown/Not Sure" as PsychCategory
+
+* Implementing Username/Password Validation upon User login
+
+* Continuing formatting to enhance User-friendliness and overall aesthetic of interface and of navigation within the app
 
 ### Highlights
-* Highlight
+* The User#saved_psych_categories method
+
+* The creative code associated using TTY:Prompt
 
 #
 
 ## Thank you! <br> Bree Warren and Stephanie Segura
-
-#
-<br />
-<br />
-<br />
-<br />
-
-# Project Tasks Schedule 
-(Tentative)
-
-* Tuesday - clean up methods with TTY Prompt [(see article here)](https://medium.com/@cristina_9416/), look into API for DSM-V
-* Wednesday - Finish methods, homepage?, text art [(see here)](http://patorjk.com/software/taag/#p=display&f=Three%20Point&t=ELEVATEmy-first-ruby-cli-app-8804058df294) stick letters)
-* Thursday - Finish everything
-* Friday - Project walkthrough, final tests and record presentatoin
-
-# Miscellaneous/ Brainstorming
-##
-
-Affirming Messages:
-- You are not alone. Here are some helpful resources for you:
-- Congrats, you've taken the first step across the bridge. Here are some helpful resources for you:
-- You're one step closer towards regaining self-empowerment in your life. Here are some helpful resources for you:
-- etc etc.
-
-# ** STRETCH GOAL **
-- Create a function where the user can save Resources they can reference back to (I believe this is #saved_resource?)
-
-- For Users who select "Unkown/Not Sure" as PsychCategory, provide a questionnare to guide them towards a category that is most fitting
